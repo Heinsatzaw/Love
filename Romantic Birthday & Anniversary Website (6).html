@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday & Anniversary My Love 💕</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for Myanmar Text & Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans Myanmar', sans-serif;
+            background: linear-gradient(135deg, #2a081a 0%, #4a1228 35%, #701a34 70%, #9f2a42 100%);
+            min-height: 100vh;
+            color: #fce7f3;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Vintage Golden Hour Warm Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(251, 191, 36, 0.15), rgba(244, 63, 94, 0.25) 60%, transparent);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Romantic Cartoon Cat Animation Styling */
+        @keyframes catCoupleFloat {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        @keyframes tailWiggle {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(12deg); }
+        }
+
+        @keyframes heartPop {
+            0% { transform: scale(0.6) translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.2) translateY(-15px); opacity: 0; }
+        }
+
+        .animated-cat-couple {
+            animation: catCoupleFloat 3.5s ease-in-out infinite;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+        }
+
+        .cat-tail {
+            transform-origin: bottom center;
+            animation: tailWiggle 2s ease-in-out infinite;
+        }
+
+        .heart-pop {
+            animation: heartPop 2s ease-in-out infinite;
+        }
+
+        /* Custom Glassmorphism Effect - Warm Romantic Aesthetic */
+        .glass-card {
+            background: rgba(45, 12, 28, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 200, 220, 0.25);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(244, 114, 182, 0.4);
+            color: #fff;
+        }
+
+        .glass-input:focus {
+            outline: none;
+            border-color: #f472b6;
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.5);
+        }
+
+        /* Glowing Button Shadows */
+        .btn-romantic-shadow {
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.6), 0 8px 10px -6px rgba(225, 29, 72, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-romantic-shadow:hover {
+            box-shadow: 0 20px 35px -5px rgba(236, 72, 153, 0.8), 0 10px 15px -5px rgba(225, 29, 72, 0.7);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Cat Animation Styling */
+        @keyframes catBounce {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        @keyframes catWiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .animated-cat {
+            animation: catBounce 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+        }
+
+        .cat-wiggle {
+            animation: catWiggle 1.5s ease-in-out infinite;
+        }
+
+        /* Music Note Animation */
+        @keyframes musicNoteFloat {
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+        }
+
+        .note-anim {
+            animation: musicNoteFloat 2s infinite ease-out;
+        }
+
+        /* Heart Pulse Animation */
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.8)); }
+        }
+
+        .pulse-heart {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+
+        /* Floating background hearts canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Music Player Pill Styling */
+        .music-player-pill {
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #4a1228;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="relative flex flex-col items-center justify-start min-h-screen">
+
+    <!-- Floating Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- FLOATING ROMANTIC CARTOON CAT COUPLE (LEFT & RIGHT) -->
+    <div class="fixed bottom-6 left-4 z-30 hidden md:block pointer-events-none">
+        <div class="animated-cat-couple flex flex-col items-center">
+            <!-- Cartoon Cat SVG Vector (Romantic Couple) -->
+            <div class="relative w-28 h-24">
+                <svg viewBox="0 0 120 100" class="w-full h-full">
+                    <!-- Heart floating above -->
+                    <path d="M60,25 C60,20 52,12 45,18 C38,24 48,34 60,42 C72,34 82,24 75,18 C68,12 60,20 60,25 Z" fill="#f43f5e" class="heart-pop"/>
+                    
+                    <!-- White Cat Left -->
+                    <g transform="translate(15, 30)">
+                        <!-- Ears -->
+                        <polygon points="12,15 5,0 22,8" fill="#ffffff" />
+                        <polygon points="28,8 45,0 38,15" fill="#ffffff" />
+                        <polygon points="12,15 7,4 20,9" fill="#fbcfe8" />
+                        <!-- Body & Head -->
+                        <ellipse cx="25" cy="40" rx="18" ry="22" fill="#ffffff"/>
+                        <circle cx="25" cy="22" r="16" fill="#ffffff"/>
+                        <!-- Eyes -->
+                        <circle cx="19" cy="20" r="2.5" fill="#374151"/>
+                        <circle cx="31" cy="20" r="2.5" fill="#374151"/>
+                        <circle cx="20" cy="19" r="0.8" fill="#ffffff"/>
+                        <!-- Blush & Nose -->
+                        <ellipse cx="14" cy="24" rx="3" ry="1.5" fill="#f472b6" opacity="0.6"/>
+                        <ellipse cx="36" cy="24" rx="3" ry="1.5" fill="#f472b6" opacity="0.6"/>
+                        <polygon points="23,23 27,23 25,25" fill="#f43f5e"/>
+                        <!-- Tail -->
+                        <path d="M10,50 Q-5,40 2,25" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none" class="cat-tail"/>
+                    </g>
+                    
+                    <!-- Orange Cat Right -->
+                    <g transform="translate(55, 32)">
+                        <!-- Ears -->
+                        <polygon points="12,15 5,0 22,8" fill="#fb923c" />
+                        <polygon points="28,8 45,0 38,15" fill="#fb923c" />
+                        <polygon points="12,15 7,4 20,9" fill="#fed7aa" />
+                        <!-- Body & Head -->
+                        <ellipse cx="25" cy="40" rx="18" ry="22" fill="#fb923c"/>
+                        <circle cx="25" cy="22" r="16" fill="#fb923c"/>
+                        <!-- Eyes happy closed -->
+                        <path d="M15,20 Q19,16 23,20" stroke="#431407" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <path d="M27,20 Q31,16 35,20" stroke="#431407" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <!-- Blush & Nose -->
+                        <ellipse cx="13" cy="24" rx="3" ry="1.5" fill="#ea580c" opacity="0.5"/>
+                        <ellipse cx="37" cy="24" rx="3" ry="1.5" fill="#ea580c" opacity="0.5"/>
+                        <polygon points="23,23 27,23 25,25" fill="#9a3412"/>
+                        <!-- Tail -->
+                        <path d="M38,50 Q55,40 48,25" stroke="#fb923c" stroke-width="5" stroke-linecap="round" fill="none" class="cat-tail"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="bg-pink-900/80 text-pink-200 text-[10px] px-2.5 py-1 rounded-full border border-pink-400/40 backdrop-blur-sm shadow-lg font-semibold">Forever Together 👩‍❤️‍👨</span>
+        </div>
+    </div>
+
+    <!-- Interactive Music Player Widget (Jazz Music) -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="music-player-pill glass-card rounded-full px-4 py-2.5 flex items-center gap-3 border border-pink-300/40 shadow-xl backdrop-blur-md">
+            <button id="musicToggle" class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-sm shadow-lg shadow-pink-500/50 hover:scale-110 active:scale-95 transition-transform focus:outline-none">
+                <i id="musicIcon" class="fas fa-play ml-0.5"></i>
+            </button>
+            <div class="hidden sm:flex flex-col pr-1">
+                <span class="text-xs font-bold text-pink-200 flex items-center gap-1.5">
+                    <span>Romantic Jazz Lounge 🎷</span>
+                    <span id="noteIndicator" class="hidden text-pink-400 text-[10px] space-x-0.5">
+                        <i class="fas fa-music note-anim" style="animation-delay: 0s;"></i>
+                        <i class="fas fa-music note-anim" style="animation-delay: 0.6s;"></i>
+                    </span>
+                </span>
+                <span id="musicStatus" class="text-[10px] text-pink-300/80 font-medium">Click to Play 🎶</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== LOCK SCREEN SCREEN ==================== -->
+    <div id="lockScreen" class="fixed inset-0 z-40 flex items-center justify-center p-4 bg-black/70 backdrop-blur-lg transition-opacity duration-700">
+        <div class="glass-card p-8 md:p-10 rounded-3xl max-w-md w-full text-center relative z-10 floating shadow-2xl border-2 border-pink-500/30">
+            <!-- Animated Romantic Cartoon Cats on Lock Screen -->
+            <div class="w-24 h-20 mx-auto mb-2 animated-cat-couple">
+                <svg viewBox="0 0 120 100" class="w-full h-full">
+                    <path d="M60,20 Q60,10 50,15 T60,35 Q60,10 70,15 T60,35 Z" fill="#f43f5e" class="heart-pop"/>
+                    <circle cx="45" cy="45" r="16" fill="#ffffff"/>
+                    <circle cx="75" cy="47" r="16" fill="#fb923c"/>
+                    <circle cx="41" cy="43" r="2" fill="#374151"/>
+                    <circle cx="49" cy="43" r="2" fill="#374151"/>
+                    <path d="M69,45 Q73,41 77,45" stroke="#431407" stroke-width="2" fill="none"/>
+                    <path d="M79,45 Q83,41 87,45" stroke="#431407" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            
+            <div class="w-20 h-20 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-pink-400 text-3xl shadow-inner border border-pink-400/40 pulse-heart">
+                <i class="fas fa-lock"></i>
+            </div>
+            
+            <h1 class="text-2xl font-bold text-pink-200 mb-2">Welcome My Love ❤️</h1>
+            <p class="text-sm text-pink-300/90 mb-6 font-medium">Website လေးထဲဝင်ဖို့ Password ရိုက်ထည့်ပေးပါနော် 😘</p>
+            
+            <form id="lockForm" onsubmit="unlockWebsite(event)" class="space-y-4">
+                <div class="relative">
+                    <input type="password" id="passInput" placeholder="Enter Password..." autocomplete="off"
+                           class="w-full text-center tracking-widest text-lg font-semibold px-4 py-3.5 rounded-2xl glass-input text-pink-100 placeholder-pink-300/50">
+                </div>
+                
+                <button type="submit" 
+                        class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-bold btn-romantic-shadow">
+                    Unlock Experience 💕
+                </button>
+            </form>
+            
+            <p id="errorMsg" class="text-rose-400 text-xs mt-3 hidden font-semibold animate-bounce">
+                Password မမှန်သေးပါဘူးနော် သဲလေး! 💖
+            </p>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main id="mainContent" class="w-full max-w-4xl px-4 py-10 z-10 hidden opacity-0 transition-opacity duration-1000">
+        
+        <!-- HEADER & HERO SECTION -->
+        <header class="text-center my-6 space-y-4 relative">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-pink-500/20 text-pink-200 text-sm font-semibold mb-2 shadow-sm border border-pink-400/30 backdrop-blur-md">
+                ✨ Special Double Celebration ✨ 🐱🐾
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-rose-200 to-amber-200 leading-tight py-1 drop-shadow-md">
+                Happy 19th Birthday <br class="md:hidden"/>& Anniversary! 🌹
+            </h1>
+            <p class="text-pink-200 text-lg md:text-xl font-medium">12.11.2026 — သဲအတွက် သီးသန့်ပြုလုပ်ထားသော အမှတ်တရနေရာလေး</p>
+            
+            <!-- Date Highlights Banner -->
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto mt-6">
+                <div class="glass-card p-4 rounded-2xl text-center border-pink-400/40 shadow-lg">
+                    <span class="block text-2xl font-bold text-pink-300">🎂 19 Years</span>
+                    <span class="text-xs text-pink-200/80 font-medium">12.11.2007 မှစ၍</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center border-pink-400/40 shadow-lg">
+                    <span class="block text-2xl font-bold text-rose-300">💖 1 Year</span>
+                    <span class="text-xs text-rose-200/80 font-medium">Happy Anniversary</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 1: BIRTHDAY WISHES -->
+        <section class="my-10">
+            <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:shadow-2xl border-white/20">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-500/20 rounded-full blur-2xl"></div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white flex items-center justify-center text-lg shadow-lg shadow-pink-500/40">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-pink-200">မွေးနေ့ ဆုတောင်း 🎁</h2>
+                </div>
+                <p class="text-pink-100 text-base md:text-lg leading-relaxed font-normal whitespace-pre-line bg-black/20 p-5 rounded-2xl border border-pink-500/20">
+                    မွေးနေ့မှာ ပျော်ရွှင်မှုတွေနဲ့ ပြည့်နှက်နေပါစေ။ သဲရဲ့အိပ်မက်လေးတွေ တစ်ခုပြီးတစ်ခု အကောင်အထည်ဖော်နိုင်ပါစေ။ G12 ကိုလဲ အကောင်းဆုံး နဲ့ သဲလိုချင်တဲ့ majorကိုရနိုင်ပါစေဗျာ။ သဲဖြစ်ချင်တဲ့ ဆန္ဒတွေပြည့်ဝပါစေ။ ကိုနဲ့လဲ မြဲပါစေ။ ဟဲဟဲ 🤭(ကို့တွက်ရောတစ်ခါတည်း ဆုတောင်းလိုက်တာ)
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ANNIVERSARY MESSAGE -->
+        <section class="my-10">
+            <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:shadow-2xl border-white/20">
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-rose-500/20 rounded-full blur-2xl"></div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 text-white flex items-center justify-center text-lg shadow-lg shadow-rose-500/40">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-rose-200">Anniversary ဆုတောင်း တွေးမိသမျှ 💌</h2>
+                </div>
+                <p class="text-pink-100 text-base md:text-lg leading-relaxed font-normal whitespace-pre-line bg-black/20 p-5 rounded-2xl border border-rose-500/20">
+                    ကိုတို့နှစ်ယောက်ရဲ့ အမှတ်တရလေးတွေကို တန်ဖိုးထားတယ်။ တစ်နှစ်အတွင်းမှာ သဲနဲ့အတူတူလျှောက်လည်ခဲ့တာတွေ အရမ်းပျော်ဖို့ကောင်းခဲ့တယ်။ ကို့အတွက် မနေ့တနေ့ကလိုပဲ နေ့စဉ်နေ့တိုင်းတွေးမိပါတယ်။ ပြီးတော့ သဲ တစ်နှစ်တာလုံးအတွက် ကျေးဇူးတင်ပါတယ်။ Happy Anniversary! 💕
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: GIFT NOTE & SKETCHING ICON -->
+        <section class="my-10">
+            <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:shadow-2xl border-white/20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white flex items-center justify-center text-lg shadow-lg shadow-purple-500/40">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-purple-200">လက်ဆောင်လေးအကြောင်း 🎨✍️</h2>
+                </div>
+                
+                <!-- Interactive Sketch Art Visual Component -->
+                <div class="bg-black/20 p-6 rounded-2xl border border-purple-500/20 mb-4 flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-900/60 to-pink-900/60 flex flex-col items-center justify-center shadow-lg border border-purple-400/30 relative flex-shrink-0 group cursor-pointer" onclick="triggerPencilAnim()">
+                        <i class="fas fa-paint-brush text-4xl text-pink-300 floating"></i>
+                        <span class="text-[10px] text-purple-200 font-bold mt-1">Art Tools ✏️</span>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-pink-100 text-base md:text-lg leading-relaxed">
+                            ဒီလက်ဆောင်လေးက သဲအတွက် ရွေးထားတာပါ။ သဲကြိုက်မယ်လို့ မျှော်လင့်ပါတယ်။ သဲ ခဲပန်းချီဆွဲတာတော်တာပေါ့✍️။ သဲအားတဲ့ချိန် စာလုပ်ပြီးတဲ့ချိန် စိတ်ပင်ပန်းနေတဲ့ခါ အနားယူတဲ့ခါ ဆွဲလို့ရအောင်လို့ ပါ ။
+                        </p>
+                        <div class="mt-2 text-rose-200 font-semibold text-sm bg-rose-900/50 px-3 py-1.5 rounded-lg inline-block border border-rose-400/40 shadow-sm">
+                            ❗ (သုံးနော်သဲ သိမ်းပဲမထားနဲ့)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: EXTRA NOTE -->
+        <section class="my-10">
+            <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:shadow-2xl border-white/20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white flex items-center justify-center text-lg shadow-lg shadow-amber-500/40">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-amber-200">ထပ်ဆောင်းစာ လေး... 💭</h2>
+                </div>
+                <p class="text-pink-100 text-base md:text-lg leading-relaxed font-normal bg-black/20 p-5 rounded-2xl border border-amber-500/20">
+                    တကယ်တော့ ကို သဲမွေးနေ့နဲ့ anniversary ကို သက်သက်စီ လက်ဆောင်ပေးချင်ခဲ့တာ။ ကိုမှာ plan တစ်ခုရှိတယ် G12 ပြီးရင်။ ဟုတ်ပါပြီဗျာ သဲ စာဖတ်ပြီးရင် အောက်ကမေးခွန်းလေးတွေ ဖြေကြည့်နော်။ အာဘွား😘😘
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE QUIZ GAME WITH CAT ANIMATION & PHOTO UPLOAD -->
+        <section class="my-12">
+            <div class="glass-card p-6 md:p-10 rounded-3xl border-2 border-pink-400/40 shadow-2xl relative">
+                
+                <!-- Floating Cartoon Cat Badge -->
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-1.5 rounded-full shadow-lg border border-pink-300/40 flex items-center gap-2">
+                    <span class="text-xs font-bold text-white tracking-wider uppercase">🐱 Mini Fun Quiz & Photos 🐾</span>
+                </div>
+
+                <div class="text-center mt-4 mb-8">
+                    <h2 class="text-3xl font-extrabold text-pink-200">သဲအတွက် မေးခွန်းလေးတွေ ဖြေကြည့်ရအောင် 💖</h2>
+                    <p class="text-pink-300/80 text-sm mt-1">အဖြေလေးတွေ ရွေးပြီးရင် "Submit Answers" လေး နှိပ်ပေးနော် 🐾</p>
+                </div>
+
+                <form id="quizForm" onsubmit="handleQuizSubmit(event)" class="space-y-8">
+                    
+                    <!-- Question 1 -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q1: ကို့ကို ဘယ်လောက်ချစ်လဲ? 🥺
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center p-3 rounded-xl bg-pink-900/30 hover:bg-pink-900/50 border border-pink-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q1" value="အများကြီး" required class="accent-pink-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-pink-200">အများကြီး 😻</span>
+                            </label>
+                            <label class="flex items-center p-3 rounded-xl bg-pink-900/30 hover:bg-pink-900/50 border border-pink-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q1" value="ကမ္ဘာမြောက်များစွာ" class="accent-pink-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-pink-200">ကမ္ဘာမြောက်များစွာ 🌍</span>
+                            </label>
+                            <label class="flex items-center p-3 rounded-xl bg-pink-900/30 hover:bg-pink-900/50 border border-pink-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q1" value="အတိုင်းအဆမရှိ" class="accent-pink-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-pink-200">အတိုင်းအဆမရှိ ♾️</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q2: ခဲပန်းချီ စုပေါင်းဆွဲဖို့ ready ဘဲလား? ✍️🎨
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <label class="flex items-center p-3 rounded-xl bg-purple-900/30 hover:bg-purple-900/50 border border-purple-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q2" value="Ready!" required class="accent-purple-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-purple-200">Ready! 🎨</span>
+                            </label>
+                            <label class="flex items-center p-3 rounded-xl bg-purple-900/30 hover:bg-purple-900/50 border border-purple-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q2" value="100% Ready!" class="accent-purple-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-purple-200">100% Ready! 🔥</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q3: G12 စာမေးပွဲပြီးရင် ကိုနဲ့ အတူတူ သွားချင်တဲ့နေရာ? ✈️🏖️
+                        </label>
+                        <input type="text" name="q3" required placeholder="ဥပမာ- ကမ်းခြေ, ကော်ဖီဆိုင်လှလှလေး..." 
+                               class="w-full px-4 py-3 rounded-xl glass-input text-pink-100 placeholder-pink-300/40">
+                    </div>
+
+                    <!-- Question 4: Plan query -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q4: ကိုယ့်ရဲ့ plan လေးကို သိချင်လား သဲလေး? 🗺️✨
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center p-3 rounded-xl bg-rose-900/30 hover:bg-rose-900/50 border border-rose-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q4" value="အရမ်းသိချင်တယ်!" required class="accent-rose-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-rose-200">အရမ်းသိချင်တယ်! 🙈</span>
+                            </label>
+                            <label class="flex items-center p-3 rounded-xl bg-rose-900/30 hover:bg-rose-900/50 border border-rose-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q4" value="ပြောပြတော့နော်" class="accent-rose-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-rose-200">ပြောပြတော့နော် 🥺</span>
+                            </label>
+                            <label class="flex items-center p-3 rounded-xl bg-rose-900/30 hover:bg-rose-900/50 border border-rose-400/30 cursor-pointer transition-all shadow-sm">
+                                <input type="radio" name="q4" value="Surprise ပဲစောင့်မယ်" class="accent-rose-500 w-4 h-4">
+                                <span class="ml-3 font-medium text-rose-200">Surprise ပဲစောင့်မယ် 🎁</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Message Input for Change/Suggestions -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q5: ကို့ကို ပြောချင်တာရှိရင် သို့ ပြောင်းစေချင်တာရှိရင် ရေးပေးခဲ့ပါနော် ✍️💌
+                        </label>
+                        <textarea name="q5" rows="3" placeholder="သဲစိတ်ကြိုက် ပြောချင်တာလေးတွေ ရေးခဲ့လို့ရပါတယ်နော်..." 
+                                  class="w-full px-4 py-3 rounded-xl glass-input text-pink-100 placeholder-pink-300/40 focus:outline-none"></textarea>
+                    </div>
+
+                    <!-- Question 6: Photo Upload Section -->
+                    <div class="bg-black/20 p-5 rounded-2xl border border-pink-500/20 shadow-md space-y-3">
+                        <label class="block text-lg font-bold text-pink-200">
+                            Q6: ကို့ဆီ သဲရဲ့ လှလှပပ ဓာတ်ပုံလေးတွေ ပို့ချင်ရင် တင်ပေးခဲ့နော် 📸💖
+                        </label>
+                        <div class="relative border-2 border-dashed border-pink-400/40 rounded-2xl p-6 text-center hover:bg-pink-900/20 transition-colors">
+                            <input type="file" id="photoInput" accept="image/*" multiple onchange="handlePhotoSelect(event)" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                            <div class="space-y-2">
+                                <i class="fas fa-cloud-upload-alt text-4xl text-pink-400 animate-bounce"></i>
+                                <p class="text-sm font-semibold text-pink-200">ဒီနေရာလေးကို နှိပ်ပြီး ဓာတ်ပုံ ရွေးပေးပါနော် ✨</p>
+                                <p class="text-xs text-pink-300/70"> (ပုံ 1 ပုံ သို့မဟုတ် အများကြီး ရွေးလို့ရပါတယ်)</p>
+                            </div>
+                        </div>
+                        <!-- Photo Preview Container -->
+                        <div id="photoPreview" class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-3"></div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn"
+                            class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-bold text-lg btn-romantic-shadow flex items-center justify-center gap-2">
+                        <span>Submit Answers 💕</span>
+                    </button>
+                </form>
+
+                <!-- Quiz Result Popup Container -->
+                <div id="quizResult" class="hidden mt-8 p-6 bg-gradient-to-r from-pink-900/60 to-purple-900/60 rounded-2xl border-2 border-pink-400/50 text-center animate-fade-in backdrop-blur-md shadow-2xl">
+                    <!-- Romantic Cute Cat Couple Animation Banner -->
+                    <div class="flex justify-center mb-3">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDk5cGhyYm9tMnZydzYzb2hvcHRyeDVxejhhZzEydXVrbzdwb2hieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lq0h93752f6J9tijrh/giphy.gif" alt="Romantic Cats Couple" class="w-32 h-28 rounded-2xl border-2 border-pink-300/60 shadow-lg object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-200 mb-2">ကျေးဇူးပါ သဲလေး! 🐾💕</h3>
+                    <p class="text-pink-100 font-medium" id="resultText"></p>
+                    <p class="text-xs text-pink-300 mt-4">အမြဲတမ်း သဲရဲ့ဘေးမှာ ကိုရှိနေမယ်နော် ❤️</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-8 text-pink-300/80 text-sm font-medium">
+            <p>Made with Endless Love for My Favorite Girl 💖</p>
+            <p class="text-xs mt-1 text-pink-400">12.11.2007 • 12.11.2026</p>
+        </footer>
+    </main>
+
+    <!-- Jazz Background Music Player -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-jazz-112199.mp3" type="audio/mpeg">
+        <source src="https://ia801503.us.archive.org/15/items/goo-goo-dolls-iris_202108/Goo%20Goo%20Dolls%20-%20Iris.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JS LOGIC -->
+    <script>
+        // TELEGRAM BOT CONFIGURATION
+        const TELEGRAM_BOT_TOKEN = '8314155080:AAHAcc0tyn5j_En9dpujjilPOouz9vbLcA0';
+        const TELEGRAM_CHAT_ID = '7182632722';
+
+        // PHOTO UPLOAD PREVIEW & HANDLING
+        let selectedPhotos = [];
+
+        function handlePhotoSelect(e) {
+            const files = Array.from(e.target.files);
+            selectedPhotos = files;
+            const previewContainer = document.getElementById('photoPreview');
+            previewContainer.innerHTML = '';
+
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'relative aspect-square rounded-xl overflow-hidden border border-pink-300 shadow-sm';
+                    imgDiv.innerHTML = `<img src="${event.target.result}" class="w-full h-full object-cover">`;
+                    previewContainer.appendChild(imgDiv);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // BACKGROUND FLOATING HEARTS CANVAS
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let hearts = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Heart {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.size = Math.random() * 15 + 8;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.opacity = Math.random() * 0.5 + 0.3;
+                this.color = `hsla(${Math.random() * 30 + 330}, 80%, 75%, ${this.opacity})`;
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -20) {
+                    this.y = canvas.height + 20;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                const topCurveHeight = this.size * 0.3;
+                ctx.moveTo(0, topCurveHeight);
+                ctx.bezierCurveTo(0, 0, -this.size / 2, 0, -this.size / 2, topCurveHeight);
+                ctx.bezierCurveTo(-this.size / 2, (this.size + topCurveHeight) / 2, 0, this.size, 0, this.size);
+                ctx.bezierCurveTo(0, this.size, this.size / 2, (this.size + topCurveHeight) / 2, this.size / 2, topCurveHeight);
+                ctx.bezierCurveTo(this.size / 2, 0, 0, 0, 0, topCurveHeight);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function initHearts() {
+            hearts = [];
+            const count = Math.floor(window.innerWidth / 25);
+            for (let i = 0; i < count; i++) {
+                hearts.push(new Heart());
+            }
+        }
+        initHearts();
+
+        function animateHearts() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hearts.forEach(heart => {
+                heart.update();
+                heart.draw();
+            });
+            requestAnimationFrame(animateHearts);
+        }
+
+        window.onload = function() {
+            animateHearts();
+        };
+
+        // AUDIO TOGGLE LOGIC
+        const audio = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicStatus = document.getElementById('musicStatus');
+        const noteIndicator = document.getElementById('noteIndicator');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', toggleMusic);
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.className = "fas fa-play ml-0.5";
+                if(musicStatus) musicStatus.innerText = "Paused ⏸️";
+                if(noteIndicator) noteIndicator.classList.add('hidden');
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    musicIcon.className = "fas fa-pause";
+                    if(musicStatus) musicStatus.innerText = "Playing Jazz 💕";
+                    if(noteIndicator) noteIndicator.classList.remove('hidden');
+                    isPlaying = true;
+                }).catch(() => {});
+            }
+        }
+
+        // PASSWORD UNLOCK LOGIC
+        function unlockWebsite(e) {
+            e.preventDefault();
+            const input = document.getElementById('passInput').value.trim();
+            const cleanInput = input.replace(/[\.\s\/]/g, ''); // Remove spaces, dots, slashes
+            
+            if (cleanInput === "12112007") {
+                const lockScreen = document.getElementById('lockScreen');
+                const mainContent = document.getElementById('mainContent');
+                
+                lockScreen.classList.add('opacity-0');
+                
+                setTimeout(() => {
+                    lockScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                    setTimeout(() => {
+                        mainContent.classList.remove('opacity-0');
+                    }, 50);
+                    
+                    fireConfetti();
+                    
+                    audio.play().then(() => { 
+                        isPlaying = true;
+                        musicIcon.className = "fas fa-pause";
+                        if(musicStatus) musicStatus.innerText = "Playing Jazz 💕";
+                        if(noteIndicator) noteIndicator.classList.remove('hidden');
+                    }).catch(() => {});
+                }, 700);
+            } else {
+                const errorMsg = document.getElementById('errorMsg');
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        // CONFETTI BURST EFFECT
+        function fireConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 120,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#ec4899', '#f472b6', '#c084fc', '#f43f5e']
+                });
+            }
+        }
+
+        // QUIZ FORM HANDLER WITH TELEGRAM BOT INTEGRATION
+        async function handleQuizSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const q1 = form.q1.value;
+            const q2 = form.q2.value;
+            const q3 = form.q3.value;
+            const q4 = form.q4.value;
+            const q5 = form.q5.value || 'မရှိပါ/စာမရိုက်ထားပါ';
+            const submitBtn = document.getElementById('submitBtn');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending...`;
+
+            // Telegram စာပြင်ဆင်ခြင်း
+            const message = `💖 *သဲလေးရဲ့ Quiz အဖြေများ* 💖\n\n` +
+                            `1️⃣ *ကို့ကို ဘယ်လောက်ချစ်လဲ:* ${q1}\n` +
+                            `2️⃣ *ခဲပန်းချီ အတူဆွဲဖို့:* ${q2}\n` +
+                            `3️⃣ *G12 ပြီးရင် သွားချင်တဲ့နေရာ:* ${q3}\n` +
+                            `4️⃣ *ကိုယ့် Plan ကို သိချင်လား:* ${q4}\n` +
+                            `5️⃣ *ကို့ကို ပြောချင်/ပြောင်းစေချင်တာ:* ${q5}\n` +
+                            `6️⃣ *ဓာတ်ပုံ အရေအတွက်:* ${selectedPhotos.length} ပုံ\n\n` +
+                            `⏰ *အချိန်:* ${new Date().toLocaleString()}`;
+
+            // Telegram Bot သို့ စာပို့ခြင်း
+            try {
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                // ဓာတ်ပုံများ ပေးပို့ခြင်း
+                for (const photo of selectedPhotos) {
+                    const formData = new FormData();
+                    formData.append('chat_id', TELEGRAM_CHAT_ID);
+                    formData.append('photo', photo);
+                    formData.append('caption', `📸 သဲလေး ပို့ပေးလိုက်သော ဓာတ်ပုံ 💕`);
+
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, {
+                        method: 'POST',
+                        body: formData
+                    });
+                }
+            } catch (error) {
+                console.error('Telegram Error:', error);
+            }
+
+            const resultDiv = document.getElementById('quizResult');
+            const resultText = document.getElementById('resultText');
+
+            resultText.innerText = `ကို့ကို "${q1}" ချစ်ပေးလို့ ကျေးဇူးပါဗျာ! ခဲပန်းချီဆွဲဖို့လဲ "${q2}" ဖြစ်နေပြီဆိုတော့ G12 အပြီး "${q3}" ကို အတူတူသွားကြမယ်နော်! Plan လေးနဲ့ ပို့ပေးထားတဲ့ ပုံလေးတွေအတွက်လဲ အရမ်းဝမ်းသာပါတယ်ဗျာ... ❤️✨`;
+
+            submitBtn.innerHTML = `<span>Submitted 💕</span>`;
+            resultDiv.classList.remove('hidden');
+            fireConfetti();
+            
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function triggerPencilAnim() {
+            fireConfetti();
+        }
+    </script>
+</body>
+</html>
